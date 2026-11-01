@@ -66,6 +66,21 @@
     typingTimeout = setTimeout(() => { isTyping = false; chat.sendTyping(username, false); }, CONFIG.TYPING_TIMEOUT_MS);
   }
 
+  /* ---- İlk açılışta hoş geldin yazısı (bir kez) ---- */
+  const WELCOME_KEY = 'yam_welcome_seen';
+
+  function welcomeSeen() {
+    try { return localStorage.getItem(WELCOME_KEY) === '1'; } catch (e) { return false; }
+  }
+
+  function closeWelcome() {
+    $('welcomeModal').style.display = 'none';
+    try { localStorage.setItem(WELCOME_KEY, '1'); } catch (e) {}
+  }
+
+  if (!welcomeSeen()) $('welcomeModal').style.display = 'flex';
+  $('welcomeCloseBtn').addEventListener('click', closeWelcome);
+
   /* ---- Olayları bağla ---- */
   $('loginBtn').addEventListener('click', login);
   $('usernameInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') login(); });
