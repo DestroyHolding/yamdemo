@@ -157,3 +157,14 @@ html,body{height:100%;width:100%;overflow:hidden;font-family:'DM Sans',sans-seri
   .bcol{max-width:80%}
 }
 
+
+/* ===== HOŞ GELDİN PENCERESİ ===== */
+.wm-overlay{position:fixed;inset:0;z-index:1000;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px)}
+.wm-card{width:min(420px,92vw);max-height:90vh;overflow-y:auto;text-align:left;padding:32px 26px}
+.wm-card .logo{text-align:center}
+.wm-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;text-align:center;margin:4px 0 16px}
+.wm-text p{font-size:14px;line-height:1.55;color:var(--text);margin-bottom:10px}
+.wm-text b{color:#fff}
+.wm-links{display:flex;gap:10px;margin:16px 0 18px}
+.wm-link{flex:1;text-align:center;background:var(--s2);border:1px solid var(--border);border-radius:12px;padding:11px 8px;color:var(--accent);font-size:13px;font-weight:500;text-decoration:none;transition:border-color .2s}
+.wm-link:hover{border-color:var(--accent)}
