@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>YAM Chat</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loginScreen">
+  <div class="card">
+    <div class="logo">YAM Chat</div>
+    <div class="tagline">Gerçek zamanlı mesajlaşma</div>
+    <div class="lbl">Kullanıcı adın</div>
+    <input class="inp" id="usernameInput" type="text" placeholder="Adını yaz..." maxlength="20" autofocus>
+    <button class="btn" id="loginBtn">Sohbete Katıl →</button>
+  </div>
+</div>
+
+<div id="app">
+  <div class="layout">
+
+    <div class="sidebar" id="sidebar">
+      <div class="sb-top">
+        <div class="brand"><div class="bpulse"></div>YAM Chat</div>
+        <div class="myp">
+          <div class="mav" id="myAvatar">?</div>
+          <div>
+            <div class="mname" id="myName">—</div>
+            <div class="mstatus">● Çevrimiçi</div>
+          </div>
+        </div>
+      </div>
+      <div class="slbl">Çevrimiçi</div>
+      <div id="onlineList"></div>
+      <div class="sb-bot">
+        <button class="lout" id="logoutBtn">Çıkış yap</button>
+      </div>
+    </div>
+
+    <div class="chat">
+      <div class="cbg"></div>
+      <div class="chead">
+        <div class="cicon">💬</div>
+        <div>
+          <div class="ctitle">Genel Sohbet</div>
+          <div class="csub">Herkese açık</div>
+        </div>
+        <div id="onlineBadge"><div class="gdot"></div><span id="onlineNum">0</span> çevrimiçi</div>
+      </div>
+      <div id="messages"></div>
+      <div id="typingBar"></div>
+      <div class="irow">
+        <div class="ibox">
+          <textarea id="msgInput" rows="1" placeholder="Mesaj yaz..."></textarea>
+        </div>
+        <button class="sbtn" id="sendBtn">➤</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tabbar">
+    <div class="tabinner">
+      <button class="tbtn active" data-tab="chat"><span>💬</span>Sohbet</button>
+      <button class="tbtn" data-tab="users"><span>👥</span>Kişiler</button>
+    </div>
+  </div>
+</div>
+
+<div id="welcomeModal" class="wm-overlay" style="display:none">
+  <div class="card wm-card">
+    <div class="logo">YAM</div>
+    <div class="wm-title">Hoş geldin! 👋</div>
+    <div class="wm-text">
+      <p>Bu, <b>Destroy Holding</b> bünyesindeki <b>Destroy Studios</b> biriminin geliştirdiği <b>YAM</b> mesajlaşma uygulamasının ilk sürümüdür.</p>
+      <p>Bu sürüm <b>açık kaynaklıdır</b>. İsteyen test edebilir, kullanabilir; isteyen alıp kendi veritabanına bağlayabilir.</p>
+      <p>Son sürüm açık kaynak değildir. Onu kullanmak isteyenler için indirme linkleri, bilgilendirmeler ve duyurular aşağıdaki sitede yapılır.</p>
+    </div>
+    <div class="wm-links">
+      <a class="wm-link" href="https://github.com/DestroyHolding/yamdemo" target="_blank" rel="noopener">GitHub Reposu</a>
+      <a class="wm-link" href="https://yaminfo.pages.dev/" target="_blank" rel="noopener">YAM Bilgi Sayfası</a>
+    </div>
+    <button class="btn" id="welcomeCloseBtn">Anladım</button>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="chat.js"></script>
+<script src="ui.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
